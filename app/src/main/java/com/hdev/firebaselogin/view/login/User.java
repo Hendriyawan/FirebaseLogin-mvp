@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 public class User implements UserView {
 
-    public static final int EMAIl_EMPTY = 0;
+    public static final int EMAIL_EMPTY = 0;
     public static final int PASSWORD_EMPTY = 1;
     public static final int PASSWORD_NOT_VALID = 2;
     public static final int IS_VALID = -1;
@@ -30,7 +30,7 @@ public class User implements UserView {
     @Override
     public int validate() {
         if (TextUtils.isEmpty(email)) {
-            return EMAIl_EMPTY;
+            return EMAIL_EMPTY;
 
         } else if (TextUtils.isEmpty(password)) {
             return PASSWORD_EMPTY;

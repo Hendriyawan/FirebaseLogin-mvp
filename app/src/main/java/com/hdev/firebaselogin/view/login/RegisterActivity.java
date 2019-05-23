@@ -17,6 +17,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/*
+created by Hendriyawan 23 Mei 2019
+ */
 public class RegisterActivity extends AppCompatActivity implements LoginView {
     private final String TAG = RegisterActivity.this.getClass().getSimpleName();
     @BindView(R.id.input_email)

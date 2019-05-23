@@ -11,6 +11,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.hdev.firebaselogin.R;
 
+/*
+created by Hendriyawan 23 Mei 2019
+ */
 public class LoginPresenter {
 
     private AppCompatActivity activity;
@@ -41,7 +44,7 @@ public class LoginPresenter {
     public void signIn(String email, String password) {
         User user = new User(email, password);
         switch (user.validate()) {
-            case User.EMAIl_EMPTY:
+            case User.EMAIL_EMPTY:
                 loginView.onFailed(activity.getResources().getString(R.string.email_empty_message));
                 break;
             case User.PASSWORD_EMPTY:
@@ -75,7 +78,7 @@ public class LoginPresenter {
     public void signUp(final String email, String password) {
         User user = new User(email, password);
         switch (user.validate()) {
-            case User.EMAIl_EMPTY:
+            case User.EMAIL_EMPTY:
                 loginView.onFailed(activity.getResources().getString(R.string.email_empty_message));
                 break;
             case User.PASSWORD_EMPTY:

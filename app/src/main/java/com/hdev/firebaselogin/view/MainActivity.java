@@ -10,7 +10,9 @@ import com.hdev.firebaselogin.R;
 import com.hdev.firebaselogin.view.login.LoginPresenter;
 
 import butterknife.ButterKnife;
-
+/*
+created by Hendriyawan 23 Mei 2019
+ */
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
