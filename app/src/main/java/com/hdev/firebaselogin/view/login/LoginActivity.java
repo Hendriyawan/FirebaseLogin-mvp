@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.hdev.firebaselogin.R;
 import com.hdev.firebaselogin.view.MainActivity;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -25,12 +26,15 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     TextInputEditText inputEmail;
     @BindView(R.id.input_password)
     TextInputEditText inputPassword;
+    @BindString(R.string.email_empty_message)
+    String EMAIL_EMPTY;
+    @BindString(R.string.password_empty_message)
+    String PASSWORD_EMPTY;
+    @BindString(R.string.password_not_valid_message)
+    String PASSWORD_NOT_VALID;
+
     private LoginPresenter loginPresenter;
     private ProgressDialog progressDialog;
-
-    private String EMAIL_EMPTY;
-    private String PASSWORD_EMPTY;
-    private String PASSWORD_NOT_VALID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +45,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
         initToolbar();
         initProgressDialog();
-
-        EMAIL_EMPTY = getResources().getString(R.string.email_empty_message);
-        PASSWORD_EMPTY = getResources().getString(R.string.password_empty_message);
-        PASSWORD_NOT_VALID = getResources().getString(R.string.password_not_valid_message);
 
         //login presenter
         loginPresenter = new LoginPresenter(this, this);
@@ -94,9 +94,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
             inputPassword.setError(message);
             inputPassword.requestFocus();
         }
-        if(message.equals(PASSWORD_NOT_VALID)){
+        if (message.equals(PASSWORD_NOT_VALID)) {
             inputPassword.setError(message);
             inputPassword.requestFocus();
+
+        } else {
+            showToast(message);
         }
     }
 
