@@ -47,12 +47,15 @@ public class LoginPresenter {
             case User.EMAIL_EMPTY:
                 loginView.onFailed(activity.getResources().getString(R.string.email_empty_message));
                 break;
+
             case User.PASSWORD_EMPTY:
                 loginView.onFailed(activity.getResources().getString(R.string.password_empty_message));
                 break;
+
             case User.PASSWORD_NOT_VALID:
                 loginView.onFailed(activity.getResources().getString(R.string.password_not_valid_message));
                 break;
+
             case User.IS_VALID:
                 loginView.onStartProgress();
                 auth.signInWithEmailAndPassword(email, password)
@@ -81,12 +84,15 @@ public class LoginPresenter {
             case User.EMAIL_EMPTY:
                 loginView.onFailed(activity.getResources().getString(R.string.email_empty_message));
                 break;
+
             case User.PASSWORD_EMPTY:
                 loginView.onFailed(activity.getResources().getString(R.string.password_empty_message));
                 break;
+
             case User.PASSWORD_NOT_VALID:
                 loginView.onFailed(activity.getResources().getString(R.string.password_not_valid_message));
                 break;
+
             case User.IS_VALID:
                 loginView.onStartProgress();
                 auth.createUserWithEmailAndPassword(email, password)

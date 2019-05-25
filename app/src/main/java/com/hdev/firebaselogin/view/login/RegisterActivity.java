@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.hdev.firebaselogin.R;
-import com.hdev.firebaselogin.view.MainActivity;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -94,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity implements LoginView {
     @Override
     public void onSuccess(String message) {
         Log.d(TAG, "onSuccess() executed");
-        showToast(message+ " please login to your account !");
+        showToast(message + " please login to your account !");
         finish();
     }
 
@@ -104,12 +103,12 @@ public class RegisterActivity extends AppCompatActivity implements LoginView {
         if (message.equals(EMAIL_EMPTY)) {
             inputEmail.setError(message);
             inputEmail.requestFocus();
-        }
-        if (message.equals(PASSWORD_EMPTY)) {
+
+        } else if (message.equals(PASSWORD_EMPTY)) {
             inputPassword.setError(message);
             inputPassword.requestFocus();
-        }
-        if (message.equals(PASSWORD_NOT_VALID)) {
+
+        } else if (message.equals(PASSWORD_NOT_VALID)) {
             inputPassword.setError(message);
             inputPassword.requestFocus();
 

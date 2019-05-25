@@ -89,12 +89,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         if (message.equals(EMAIL_EMPTY)) {
             inputEmail.setError(message);
             inputEmail.requestFocus();
-        }
-        if (message.equals(PASSWORD_EMPTY)) {
+
+        } else if (message.equals(PASSWORD_EMPTY)) {
             inputPassword.setError(message);
             inputPassword.requestFocus();
-        }
-        if (message.equals(PASSWORD_NOT_VALID)) {
+
+        } else if (message.equals(PASSWORD_NOT_VALID)) {
             inputPassword.setError(message);
             inputPassword.requestFocus();
 
